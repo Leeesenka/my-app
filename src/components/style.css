@@ -1,43 +1,3 @@
-@import "~react-image-gallery/styles/css/image-gallery.css";
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 body {
   margin: 0;
@@ -225,14 +185,13 @@ border: 1px solid white;
   padding-right: 100px;
   margin: 0; 
   padding-bottom: 15px;
-  text-align: left;
 } 
-blockquote h1 {
+.blockquote h1 {
   padding-bottom: 15px;
 }
 
 
-blockquote {
+.blockquote {
   margin: 0;
   background: white;
   border-top: 5px solid #EAF9F9;
@@ -242,9 +201,8 @@ blockquote {
   position: relative;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  text-align: left;
   }
-  blockquote:before {
+  .blockquote:before {
   content: "\201C";
 
   position: absolute;
@@ -260,16 +218,15 @@ blockquote {
   text-align: center;
   }
  
-  blockquote cite {
+  .blockquote cite {
 padding-top: 15px;
   font-style: normal;
   font-size: 25px;
   }
 
-
 .row1 p {
-  /* padding-right: 180px; */
-text-align: left;
+  padding-right: 180px;
+
   font-size: 40px;
 }
 ul {
@@ -277,10 +234,6 @@ ul {
   padding-inline-start: 0;
   line-height: 30px;
   
-}
-
-.list_1 {
-  text-align: left;
 }
 
 .button_1 {
@@ -302,7 +255,6 @@ border-radius: 30px;
 .stars_logo {
 padding-top: 10px;
 font-size: 19px;
-text-align: left;
 }
 
 
@@ -413,10 +365,6 @@ font-size: 16px;
   
 }
 
-#About, #Skills, #Projects, #CV {
-  font-size: 45px;
-}
-
 .about-me {
   display: flex;
   position: relative;
@@ -452,18 +400,15 @@ font-size: 16px;
   width: 320px;
 }
 .info-me {
-  padding-right: 30px;
+  padding: 10px;
   
 }
 .info-me h2 {
-  color: #f1770b;
-  margin-top: 0%;
-  
+  color: #f1770b
 }
 
-.info-me p {
-  margin: 10px;
-  font-size: 13px;
+p {
+  margin: 0;
 }
 
 .team {
@@ -612,7 +557,6 @@ align-items: center;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  
  
 
 }
@@ -621,21 +565,29 @@ align-items: center;
 text-align: right;
 margin-left: 30px;
 }
-
-#facebook, #instagram, #linedin, #git {
+.cont-ik i {
   color: white;
   font-size: 45px;
   padding-left: 10px;
   text-align: center;
   margin: 20px;
+  
 }
+
+.cont-ik {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+margin: 10px;
+}
+
 
 .forms-for {
   display: flex;
   position: relative;
   flex-direction: column;
 
-  margin: 30px;
+  margin: 40px;
  
  
  
@@ -645,22 +597,8 @@ margin-left: 30px;
 .forms-for input {
   height: 35px;
   font-size: 20px;
-  margin-top: 15px;
   
 }
-#message {
-  height: 60px;
-}
-
-/* .carousel-image {
-  width: 300px;
-  height: 100px;
-} */
-.legend {
-  width: 300px; /* Adjust this value to suit your needs */
-  padding: 10px; /* For padding around the text */
-}
-
 
 .text-for {
   display: flex;
@@ -704,9 +642,27 @@ margin: 10px;
   color: white;
 }
 
+@media all and (min-width: 1024px) and (max-width: 1280px) {
 
   
-
+    .row1 h1 {
+      font-size: 40px;
+     
+    }
+    .row1 p {
+      font-size: 30px;
+    }
+  
+    body {
+    
+  zoom: 0.4;
+  }
+  
+  
+  /* .info-me p {
+    font-size: 20px;
+  
+  }
   
   .about-me h1 {
     font-size: 40px;
@@ -720,7 +676,25 @@ margin: 10px;
   .category {
     margin: 10px;
   
+  } */
+}
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+ 
+  .row1 h1 {
+    font-size: 40px;
+   
   }
+  .row1 p {
+    font-size: 30px;
+  }
+
+  body {
+  
+zoom: 0.4;
+}
 
 
 /* .info-me p {
@@ -740,7 +714,7 @@ margin: 10px;
 .category {
   margin: 10px;
 } */
-
+}
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .site-header__inner2 {
@@ -799,7 +773,7 @@ zoom: 0.4;
 
 
 .info-me p {
-  font-size: 13px;
+  font-size: 20px;
 
 }
 
@@ -822,70 +796,11 @@ zoom: 0.4;
   margin: 10px;
 }
 }
+
 .my_skills {
-  display: flex;
+  display:  flex;
   position: relative;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  text-align: center;
-  align-items: center; 
+  margin-bottom: 100px;
 }
-
-.my_skills h1 {
-  font-size: 40px;
-  margin-top: 50px;
-}
-
-.skills  img{
-  width: 110%;
-  margin: 20px;
-}
-
-.skills {
-  margin-bottom: 150px;
-}
-
-/* .my_skills img {
-  max-width: 100%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
- 
-}
-
-/* .skills {
-  position: relative; 
-} */
-
-/* #main-skills {
-  left: 550px;
-  top: 200px;
-}
-
-#css {
-  left: 600px;
-  top: 400px;
-}
-
-#reactt {
-  left: 950px;
-  top: 273px;
-}
-
-#htmll {
-  left: 1120px;
-  top: 510px;
-}
-
-#git {
-  left: 1020px;
-  top: 360px;
-} */
-
-.my-original-class {
-  width: 300px;
-  margin: 20px;
-
-}
-
