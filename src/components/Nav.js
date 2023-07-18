@@ -13,7 +13,9 @@ import Elena from './Elena-Chuvilina.jpeg'
 import Sergey from './Sergei-Boiko.jpeg'
 import Icone from './Icone.png'
 import Heroes from './Superheroes.png'
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 import Shop from './shop.png'
 import pdf from './Alesya_Frolova_CV.pdf'
 import Sea from './sea.png'
@@ -26,13 +28,22 @@ import ImageGallery from 'react-image-gallery'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import emailjs from 'emailjs-com';
-// import CSS from './CSS.png'
-// import GitHub from './GitHub.png'
-// import HTML from './HTML.png'
-// import Reactt from './React.png'
+import Image1 from './Screenshot 2023-07-17 at 15.13.16.png';
+import Image2 from './Screenshot 2023-07-17 at 15.13.59.png';
+import Image3 from './Screenshot 2023-07-17 at 15.14.18.png';
+import hotel1 from './hotel1.png'
+import hotel2 from './hotel2.png'
+import hotel3 from './hotel3.png'
+import hotel4 from './hotel4.png'
+import final1 from './final1.png'
+import final2 from './final2.png'
+import final3 from './final3.png'
+import final4 from './final4.png'
+import final5 from './final5.png'
+import final6 from './final6.png'
 import { faFacebook, faSquareInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-
-
+import Modal from 'react-modal';
+Modal.setAppElement('#root')
 const Header = () => {
     return (
         <>
@@ -48,7 +59,7 @@ const Header = () => {
                         <li><a className="menu__item" href="#Skills">Skills</a></li>
                         <li><a className="menu__item" href="#CV">CV</a></li>
                         <li><a className="menu__item" href="#Projects">Projects</a></li>
-                        <li><a className="menu__item" href="#Team">Team</a></li>
+                        {/* <li><a className="menu__item" href="#Team">Team</a></li> */}
                         <li><a className="menu__item" href="#Contacts">Contacts</a></li>
                     </ul>
                 </div>
@@ -57,7 +68,7 @@ const Header = () => {
                     <a className="menu__item" href="#Skills">Skills</a>
                     <a className="menu__item" href="#CV">CV</a>
                     <a className="menu__item" href="#Projects">Projects</a>
-                    <a className="menu__item" href="#Team">Team</a>
+                    {/* <a className="menu__item" href="#Team">Team</a> */}
               
                     <a className="menu__item" href="#Contacts">Contacts</a>
                     <div className="top-level-nav__item">
@@ -89,7 +100,7 @@ const Header = () => {
                     <li> <FontAwesomeIcon icon={faCheck}/>CV</li>
                     
                     <li> <FontAwesomeIcon icon={faCheck}/>My Projects</li>   
-                    <li> <FontAwesomeIcon icon={faCheck}/>My Team</li>   
+                    {/* <li> <FontAwesomeIcon icon={faCheck}/>My Team</li>    */}
                     <li> <FontAwesomeIcon icon={faCheck}/>My contacts</li>   
                 </ul>
                 <span className="button_1">
@@ -135,57 +146,75 @@ const AboutMe = () => {
 };
 
 const Projects = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalContent, setModalContent] = useState('');
     const images = [
+       
         {
-            original: Sea,
-            thumbnail: Sea,
+            original: final6,
+            thumbnail: final6,
             originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_1/Day_1/Create_Your_First%20HTML_Page',
-        },
-        {
-            original: Shop,
-            thumbnail: Shop,
-            originalClass: 'my-original-class',
-            originalUrl: 'https://github.com/Leeesenka/Developers_institute/tree/main/Week_1/Day_2',
-        },
-        {
-            original: final,
-            thumbnail: final,
-            originalClass: 'my-original-class',
-            originalUrl:'https://fms-support-client.onrender.com/'
+            originalUrl:'https://fms-support-client.onrender.com/',
+            description: { 
+                info: "For my final project, I devised a service management solution, specializing in managing maintenance and mobile workforce using Node.js, React, and APIs. The system is comprised of three modules: client, manager, and engineer. Clients submit service requests, which are forwarded via API to the manager module for parsing and database storage. The manager assigns the request to an engineer via a chat bot, where decisions on task execution are timestamped for future analytics. This facilitates efficient tracking of service work, customer trends, equipment status, and engineer performance.",
+                images: [
+                    {url: final1, description: 'Image 1 description'},
+                    {url: final2, description: 'Image 2 description'},
+                    {url: final3, description: 'Image 3 description'},
+                    {url: final4, description: 'Image 4 description'},
+                    {url: final5, description: 'Image 5 description'},
+                ],
+                photoProjects: final6,
+            }
         },
         {
             original: hotel,
             thumbnail: hotel,
             originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Mini_Project_Hotel_Torquay'
+            originalUrl:'https://github.com/Leeesenka/Mini_Project_Hotel_Torquay',
+            description: { 
+                info: "The project, developed in Django, focuses on creating a dual-interface website for Torquay Towers, a hotel in the English countryside. One interface caters to visitors, offering hotel information, displaying vacancies, facilitating bookings, and providing a form for additional information requests and review submissions. The other interface serves hotel staff, allowing efficient management of bookings, vacancies, guest messages, and reviews. The project leverages Django ORM for database operations, built-in user authentication for login/logout functionalities, and Django forms for data collection and validation. An appealing info page enhances visitor experience, while the Django Admin interface simplifies project data management.",
+                images: [
+                    {url: hotel1, description: 'Image 1 description'},
+                    {url: hotel2, description: 'Image 2 description'},
+                    {url: hotel3, description: 'Image 3 description'},
+                    {url: hotel4, description: 'Image 4 description'},
+                ],
+                photoProjects: hotel,
+            }
         },
         {
             original: alarm,
             thumbnail: alarm,
             originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_10/Day_5/alarm'
-        },
-      
-        {
-            original:   Heroes,
-            thumbnail:   Heroes,
-            originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_12/Day_5/dch/my-app'
-        },
+            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_10/Day_5/alarm',
+            description: { 
+              info: "I have developed a system to monitor and analyze alerts typically related to terrorist threats and rocket attacks. These alerts are initially posted on a Telegram channel, from which I have devised a way to automatically forward all data to my own Telegram bot. Upon receiving this data, my bot parses each message and stores relevant information, such as the time and location of each threat. This creates a rich dataset that I can then use for deeper analysis. To serve and manipulate this data, I used Django Rest API, a powerful and flexible toolkit for building Web APIs in Django. This allows me to handle, query and filter the data as needed for my analysis. The front-end of the system is built with JavaScript, and I've utilized the Chart.js library to visualize the data. Chart.js provides beautiful, flexible, and interactive charts that can handle a variety of data formats and display options. Therefore, this system not only collects and stores crucial alert data automatically, but also provides a visual representation for easy understanding and further analysis.",
+              images: [
+                {url: Image1, description: 'Image 1 description'},
+                {url: Image2, description: 'Image 2 description'},
+                {url: Image3, description: 'Image 3 description'},
+              ],
+              photoProjects: alarm,
+            }
+          },
+          
+
     ];
 
     const renderItem = (item) => {
         return (
             <div className='image-gallery-image'>
-                <a href={item.originalUrl} target='_blank' rel='noopener noreferrer'>
+                <a href={item.originalUrl} 
+                   target='_blank' 
+                   rel='noopener noreferrer'
+                   onClick={(e) => {
+                    e.preventDefault();
+                    setModalContent(item); 
+                    setModalIsOpen(true);
+                }}>
                     {/* add CSS here to limit the size of images */}
                     <img src={item.original} alt='' style={{maxWidth: "100%", maxHeight: "100%"}} />
-                    {item.description && (
-                        <span className='image-gallery-description'>
-                            {item.description}
-                        </span>
-                    )}
                 </a>
             </div>
         );
@@ -201,11 +230,30 @@ const Projects = () => {
                               showBullets={true}
                               renderItem={renderItem}  />
             </div>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={() => setModalIsOpen(false)}
+              style={{
+                content: {
+                  width: '80%', 
+                  height: '80%', 
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  marginTop: 'auto', 
+                  marginBottom: 'auto',
+                 
+                }
+              }}
+            >
+
+<ProjectInfo project={modalContent || {}} />
+              <div className='but-close'>
+    <button  id='close' style={{alignItems: 'center'}} onClick={() => setModalIsOpen(false)}>Close</button>
+    </div>
+</Modal>
         </div>
     );
 };
-
-
 
 
 
@@ -215,11 +263,6 @@ const Skills = () => {
             <h1 id="Skills">My Skills</h1>
             <div className='skills'>
                     <img src={skills }></img>
-                    {/* <img src={skills} id='main-skills' alt="skills" />
-                    <img src={CSS}  id='css' alt="skills" />
-                    <img src={Reactt} id='reactt' alt="skills" />
-                    <img src={HTML} id='htmll' alt="skills" />
-                    <img src={GitHub} id='git' alt="skills" /> */}
            
             </div>
 	    </div>
@@ -238,64 +281,64 @@ const CV = () => {
   }
 
 
-const Team = () => {
-    return (
-        <div className="team">
-            <h1><a name ="Team"></a>Our course Team</h1>
-            <div className="text-team">
-                {/* <span className="button_2">
-                    <a href="NEW">NEW</a>
-                </span> */}
-                <b>This is my crazy team</b>
-                <h2>Teamwork is everything to a company. Teammates are everything to each other.</h2>
-                {/* <p>Team building slogans, also commonly called team mottos, are catchy phrases that summarize a team’s spirit, mission, or character. Leaders often use slogans to motivate and inspire teams.
-                </p> */}
-            </div>
-            <div className="team-photo">
-                <div className="photo1">
-                    <div className="name1">
-                        <p>Sergei Boiko</p>
-                    </div>
-                    <img src={Sergey} height="290" width="250" alt="Sergei Boiko"/>
-                    <div className="under-team-photo">
-                        <p>Sergei Boiko</p>
-                        <img src={Icone} height="25" alt="icon"/>
-                    </div>
-                </div>
-                <div className="photo1">
-                    <div className="name1">
-                        <p>Maksim Chalov</p>
-                    </div>
-                    <img src={Maksim} height="290" width="250" alt="Maksim Chalov"/>
-                    <div className="under-team-photo">
-                        <p>Maksim Chalov</p>
-                        <img src={Icone} height="25" alt="icon"/>
-                    </div>
-                </div>
-                <div className="photo1">
-                    <div className="name1">
-                        <p>Nikolas Weber</p>
-                    </div>
-                    <img src={Nikolas} height="290" width="250" alt="Nikolas Weber"/>
-                    <div className="under-team-photo">
-                        <p>Nikolas Weber</p>
-                        <img src={Icone} height="25" alt="icon"/>
-                    </div>
-                </div>
-                <div className="photo1">
-                    <div className="name1">
-                        <p>Elena Chuvilina</p>
-                    </div>
-                    <img src={Elena} height="290" width="250" alt="Elena Chuvilina"/>
-                    <div className="under-team-photo">
-                        <p>Elena Chuvilina</p>
-                        <img src={Icone} height="25" alt="icon"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
+// const Team = () => {
+//     return (
+//         <div className="team">
+//             <h1><a name ="Team"></a>Our course Team</h1>
+//             <div className="text-team">
+//                 {/* <span className="button_2">
+//                     <a href="NEW">NEW</a>
+//                 </span> */}
+//                 <b>This is my crazy team</b>
+//                 <h2>Teamwork is everything to a company. Teammates are everything to each other.</h2>
+//                 {/* <p>Team building slogans, also commonly called team mottos, are catchy phrases that summarize a team’s spirit, mission, or character. Leaders often use slogans to motivate and inspire teams.
+//                 </p> */}
+//             </div>
+//             <div className="team-photo">
+//                 <div className="photo1">
+//                     <div className="name1">
+//                         <p>Sergei Boiko</p>
+//                     </div>
+//                     <img src={Sergey} height="290" width="250" alt="Sergei Boiko"/>
+//                     <div className="under-team-photo">
+//                         <p>Sergei Boiko</p>
+//                         <img src={Icone} height="25" alt="icon"/>
+//                     </div>
+//                 </div>
+//                 <div className="photo1">
+//                     <div className="name1">
+//                         <p>Maksim Chalov</p>
+//                     </div>
+//                     <img src={Maksim} height="290" width="250" alt="Maksim Chalov"/>
+//                     <div className="under-team-photo">
+//                         <p>Maksim Chalov</p>
+//                         <img src={Icone} height="25" alt="icon"/>
+//                     </div>
+//                 </div>
+//                 <div className="photo1">
+//                     <div className="name1">
+//                         <p>Nikolas Weber</p>
+//                     </div>
+//                     <img src={Nikolas} height="290" width="250" alt="Nikolas Weber"/>
+//                     <div className="under-team-photo">
+//                         <p>Nikolas Weber</p>
+//                         <img src={Icone} height="25" alt="icon"/>
+//                     </div>
+//                 </div>
+//                 <div className="photo1">
+//                     <div className="name1">
+//                         <p>Elena Chuvilina</p>
+//                     </div>
+//                     <img src={Elena} height="290" width="250" alt="Elena Chuvilina"/>
+//                     <div className="under-team-photo">
+//                         <p>Elena Chuvilina</p>
+//                         <img src={Icone} height="25" alt="icon"/>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
 
 
 const Contact = () => {
@@ -317,7 +360,7 @@ const Contact = () => {
             });
     };
 
-    
+
     return (
         <div className="contacts">
             
@@ -354,8 +397,31 @@ const Contact = () => {
 };
 
 
+const ProjectInfo = ({ project }) => {
+    return (
+        <div className='aboutProjects'>
+            <div className='text-projects'>
+                <div className='logo-project'>
+                    <h1>Project Information</h1>
+                    <img src={project.description.photoProjects}></img>
+                </div>
+            <p style={{color: 'black', marginBlockEnd: '100px'}}>{project.description.info}</p>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+                {project.description.images && project.description.images.map((image, index) => (
+                    <div key={index} style={{ margin: '10px' }}>
+                        {image.url && <img src={image.url} alt={`Project ${index}`} style={{ maxWidth: '300px', maxHeight: '300px' }} />}
+                        {image.description && <p>{image.description}</p>}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 
 
-export { Header, AboutMe, Projects, Skills, Team, Contact, CV };
+
+
+export { Header, AboutMe, Projects, Skills, Contact, CV };
 

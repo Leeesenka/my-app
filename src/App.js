@@ -1,4 +1,4 @@
-import {Header, AboutMe, Projects, Skills, Team, Contact, CV } from './components/Nav'
+import {Header, AboutMe, Projects, Skills, Contact, CV } from './components/Nav'
 import './App.css';
 
 
@@ -11,7 +11,7 @@ function App() {
             <Skills />
             <CV />
             <Projects />
-            <Team />
+            {/* <Team /> */}
             <Contact />
         </div>
     
