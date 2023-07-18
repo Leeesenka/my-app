@@ -59,7 +59,7 @@ const Header = () => {
                         <li><a className="menu__item" href="#Skills">Skills</a></li>
                         <li><a className="menu__item" href="#CV">CV</a></li>
                         <li><a className="menu__item" href="#Projects">Projects</a></li>
-                        {/* <li><a className="menu__item" href="#Team">Team</a></li> */}
+           
                         <li><a className="menu__item" href="#Contacts">Contacts</a></li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@ const Header = () => {
                     <a className="menu__item" href="#Skills">Skills</a>
                     <a className="menu__item" href="#CV">CV</a>
                     <a className="menu__item" href="#Projects">Projects</a>
-                    {/* <a className="menu__item" href="#Team">Team</a> */}
+  
               
                     <a className="menu__item" href="#Contacts">Contacts</a>
                     <div className="top-level-nav__item">
@@ -98,9 +98,8 @@ const Header = () => {
                     <li> <FontAwesomeIcon icon={faCheck}/>About me</li>
                     <li> <FontAwesomeIcon icon={faCheck}/>My skills</li>
                     <li> <FontAwesomeIcon icon={faCheck}/>CV</li>
-                    
                     <li> <FontAwesomeIcon icon={faCheck}/>My Projects</li>   
-                    {/* <li> <FontAwesomeIcon icon={faCheck}/>My Team</li>    */}
+               
                     <li> <FontAwesomeIcon icon={faCheck}/>My contacts</li>   
                 </ul>
                 <span className="button_1">
@@ -158,11 +157,11 @@ const Projects = () => {
             description: { 
                 info: "For my final project, I devised a service management solution, specializing in managing maintenance and mobile workforce using Node.js, React, and APIs. The system is comprised of three modules: client, manager, and engineer. Clients submit service requests, which are forwarded via API to the manager module for parsing and database storage. The manager assigns the request to an engineer via a chat bot, where decisions on task execution are timestamped for future analytics. This facilitates efficient tracking of service work, customer trends, equipment status, and engineer performance.",
                 images: [
-                    {url: final1, description: 'Image 1 description'},
-                    {url: final2, description: 'Image 2 description'},
-                    {url: final3, description: 'Image 3 description'},
-                    {url: final4, description: 'Image 4 description'},
-                    {url: final5, description: 'Image 5 description'},
+                    {url: final1, description: ''},
+                    {url: final2, description: ''},
+                    {url: final3, description: ''},
+                    {url: final4, description: ''},
+                    {url: final5, description: ''},
                 ],
                 photoProjects: final6,
             }
@@ -175,10 +174,10 @@ const Projects = () => {
             description: { 
                 info: "The project, developed in Django, focuses on creating a dual-interface website for Torquay Towers, a hotel in the English countryside. One interface caters to visitors, offering hotel information, displaying vacancies, facilitating bookings, and providing a form for additional information requests and review submissions. The other interface serves hotel staff, allowing efficient management of bookings, vacancies, guest messages, and reviews. The project leverages Django ORM for database operations, built-in user authentication for login/logout functionalities, and Django forms for data collection and validation. An appealing info page enhances visitor experience, while the Django Admin interface simplifies project data management.",
                 images: [
-                    {url: hotel1, description: 'Image 1 description'},
-                    {url: hotel2, description: 'Image 2 description'},
-                    {url: hotel3, description: 'Image 3 description'},
-                    {url: hotel4, description: 'Image 4 description'},
+                    {url: hotel1, description: ''},
+                    {url: hotel2, description: ''},
+                    {url: hotel3, description: ''},
+                    {url: hotel4, description: ''},
                 ],
                 photoProjects: hotel,
             }
@@ -191,9 +190,9 @@ const Projects = () => {
             description: { 
               info: "I have developed a system to monitor and analyze alerts typically related to terrorist threats and rocket attacks. These alerts are initially posted on a Telegram channel, from which I have devised a way to automatically forward all data to my own Telegram bot. Upon receiving this data, my bot parses each message and stores relevant information, such as the time and location of each threat. This creates a rich dataset that I can then use for deeper analysis. To serve and manipulate this data, I used Django Rest API, a powerful and flexible toolkit for building Web APIs in Django. This allows me to handle, query and filter the data as needed for my analysis. The front-end of the system is built with JavaScript, and I've utilized the Chart.js library to visualize the data. Chart.js provides beautiful, flexible, and interactive charts that can handle a variety of data formats and display options. Therefore, this system not only collects and stores crucial alert data automatically, but also provides a visual representation for easy understanding and further analysis.",
               images: [
-                {url: Image1, description: 'Image 1 description'},
-                {url: Image2, description: 'Image 2 description'},
-                {url: Image3, description: 'Image 3 description'},
+                {url: Image1, description: ''},
+                {url: Image2, description: ''},
+                {url: Image3, description: ''},
               ],
               photoProjects: alarm,
             }
