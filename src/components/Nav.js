@@ -391,14 +391,14 @@ const ProjectInfo = ({ project }) => {
             <div className='text-projects'>
                 <div className='logo-project'>
                     <h1>Project Information</h1>
-                    <img src={project.description.photoProjects}></img>
+                    <img src={project.description.photoProjects} onClick={() => window.open(project.originalUrl, "_blank")}></img>
                 </div>
-            <p style={{color: 'black', marginBlockEnd: '100px'}}>{project.description.info}</p>
+                <p style={{color: 'black', marginBlockEnd: '100px'}}>{project.description.info}</p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
                 {project.description.images && project.description.images.map((image, index) => (
                     <div key={index} style={{ margin: '10px' }}>
-                        {image.url && <img src={image.url} alt={`Project ${index}`} style={{ maxWidth: '300px', maxHeight: '300px' }} />}
+                        {image.url && <img src={image.url} alt={`Project ${index}`} style={{ maxWidth: '300px', maxHeight: '300px' }} onClick={() => window.open(project.originalUrl, "_blank")} />}
                         {image.description && <p>{image.description}</p>}
                     </div>
                 ))}
@@ -406,7 +406,6 @@ const ProjectInfo = ({ project }) => {
         </div>
     );
 };
-
 
 
 
