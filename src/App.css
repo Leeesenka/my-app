@@ -450,6 +450,7 @@ font-size: 16px;
 .photo-my img {
   border-radius: 50%;
   width: 320px;
+  margin-right: 50px;
 }
 .info-me {
   padding-right: 30px;
@@ -942,4 +943,22 @@ border-radius: 30px;
   text-align: justify;
   margin-top: 65px;
   margin-left: 40px;
+}
+
+.image-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.image-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.insta {
+  margin-bottom: 100px;
 }

@@ -7,20 +7,9 @@ import firstPhoto from './contest-hero.png'
 import myPhoto from './my_photo.jpeg'
 import skills from './Group 6.png'
 import contImage from './con.avif'
-import Nikolas from './Nikolas-Weber.jpeg'
-import Maksim from './Maksim-Chalov.jpeg'
-import Elena from './Elena-Chuvilina.jpeg'
-import Sergey from './Sergei-Boiko.jpeg'
-import Icone from './Icone.png'
-import Heroes from './Superheroes.png'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
-import Shop from './shop.png'
 import pdf from './Alesya_Frolova_CV.pdf'
-import Sea from './sea.png'
-
-import final from './FinalProject.png'
 import myCV from './ScrinCV.png'
 import hotel from './hotel.png'
 import alarm from './alarm.png'
@@ -144,115 +133,115 @@ const AboutMe = () => {
     );
 };
 
-const Projects = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [modalContent, setModalContent] = useState('');
-    const images = [
+// const Projects = () => {
+//     const [modalIsOpen, setModalIsOpen] = useState(false);
+//     const [modalContent, setModalContent] = useState('');
+//     const images = [
        
-        {
-            original: final6,
-            thumbnail: final6,
-            originalClass: 'my-original-class',
-            originalUrl:'https://fms-support-client.onrender.com/',
-            description: { 
-                info: "For my final project, I devised a service management solution, specializing in managing maintenance and mobile workforce using Node.js, React, and APIs. The system is comprised of three modules: client, manager, and engineer. Clients submit service requests, which are forwarded via API to the manager module for parsing and database storage. The manager assigns the request to an engineer via a chat bot, where decisions on task execution are timestamped for future analytics. This facilitates efficient tracking of service work, customer trends, equipment status, and engineer performance.",
-                images: [
-                    {url: final1, description: ''},
-                    {url: final2, description: ''},
-                    {url: final3, description: ''},
-                    {url: final4, description: ''},
-                    {url: final5, description: ''},
-                ],
-                photoProjects: final6,
-            }
-        },
-        {
-            original: hotel,
-            thumbnail: hotel,
-            originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Mini_Project_Hotel_Torquay',
-            description: { 
-                info: "The project, developed in Django, focuses on creating a dual-interface website for Torquay Towers, a hotel in the English countryside. One interface caters to visitors, offering hotel information, displaying vacancies, facilitating bookings, and providing a form for additional information requests and review submissions. The other interface serves hotel staff, allowing efficient management of bookings, vacancies, guest messages, and reviews. The project leverages Django ORM for database operations, built-in user authentication for login/logout functionalities, and Django forms for data collection and validation. An appealing info page enhances visitor experience, while the Django Admin interface simplifies project data management.",
-                images: [
-                    {url: hotel1, description: ''},
-                    {url: hotel2, description: ''},
-                    {url: hotel3, description: ''},
-                    {url: hotel4, description: ''},
-                ],
-                photoProjects: hotel,
-            }
-        },
-        {
-            original: alarm,
-            thumbnail: alarm,
-            originalClass: 'my-original-class',
-            originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_10/Day_5/alarm',
-            description: { 
-              info: "I have developed a system to monitor and analyze alerts typically related to terrorist threats and rocket attacks. These alerts are initially posted on a Telegram channel, from which I have devised a way to automatically forward all data to my own Telegram bot. Upon receiving this data, my bot parses each message and stores relevant information, such as the time and location of each threat. This creates a rich dataset that I can then use for deeper analysis. To serve and manipulate this data, I used Django Rest API, a powerful and flexible toolkit for building Web APIs in Django. This allows me to handle, query and filter the data as needed for my analysis. The front-end of the system is built with JavaScript, and I've utilized the Chart.js library to visualize the data. Chart.js provides beautiful, flexible, and interactive charts that can handle a variety of data formats and display options. Therefore, this system not only collects and stores crucial alert data automatically, but also provides a visual representation for easy understanding and further analysis.",
-              images: [
-                {url: Image1, description: ''},
-                {url: Image2, description: ''},
-                {url: Image3, description: ''},
-              ],
-              photoProjects: alarm,
-            }
-          },
+//         {
+//             original: final6,
+//             thumbnail: final6,
+//             originalClass: 'my-original-class',
+//             originalUrl:'https://fms-support-client.onrender.com/',
+//             description: { 
+//                 info: "For my final project, I devised a service management solution, specializing in managing maintenance and mobile workforce using Node.js, React, and APIs. The system is comprised of three modules: client, manager, and engineer. Clients submit service requests, which are forwarded via API to the manager module for parsing and database storage. The manager assigns the request to an engineer via a chat bot, where decisions on task execution are timestamped for future analytics. This facilitates efficient tracking of service work, customer trends, equipment status, and engineer performance.",
+//                 images: [
+//                     {url: final1, description: ''},
+//                     {url: final2, description: ''},
+//                     {url: final3, description: ''},
+//                     {url: final4, description: ''},
+//                     {url: final5, description: ''},
+//                 ],
+//                 photoProjects: final6,
+//             }
+//         },
+//         {
+//             original: hotel,
+//             thumbnail: hotel,
+//             originalClass: 'my-original-class',
+//             originalUrl:'https://github.com/Leeesenka/Mini_Project_Hotel_Torquay',
+//             description: { 
+//                 info: "The project, developed in Django, focuses on creating a dual-interface website for Torquay Towers, a hotel in the English countryside. One interface caters to visitors, offering hotel information, displaying vacancies, facilitating bookings, and providing a form for additional information requests and review submissions. The other interface serves hotel staff, allowing efficient management of bookings, vacancies, guest messages, and reviews. The project leverages Django ORM for database operations, built-in user authentication for login/logout functionalities, and Django forms for data collection and validation. An appealing info page enhances visitor experience, while the Django Admin interface simplifies project data management.",
+//                 images: [
+//                     {url: hotel1, description: ''},
+//                     {url: hotel2, description: ''},
+//                     {url: hotel3, description: ''},
+//                     {url: hotel4, description: ''},
+//                 ],
+//                 photoProjects: hotel,
+//             }
+//         },
+//         {
+//             original: alarm,
+//             thumbnail: alarm,
+//             originalClass: 'my-original-class',
+//             originalUrl:'https://github.com/Leeesenka/Developers_institute/tree/main/Week_10/Day_5/alarm',
+//             description: { 
+//               info: "I have developed a system to monitor and analyze alerts typically related to terrorist threats and rocket attacks. These alerts are initially posted on a Telegram channel, from which I have devised a way to automatically forward all data to my own Telegram bot. Upon receiving this data, my bot parses each message and stores relevant information, such as the time and location of each threat. This creates a rich dataset that I can then use for deeper analysis. To serve and manipulate this data, I used Django Rest API, a powerful and flexible toolkit for building Web APIs in Django. This allows me to handle, query and filter the data as needed for my analysis. The front-end of the system is built with JavaScript, and I've utilized the Chart.js library to visualize the data. Chart.js provides beautiful, flexible, and interactive charts that can handle a variety of data formats and display options. Therefore, this system not only collects and stores crucial alert data automatically, but also provides a visual representation for easy understanding and further analysis.",
+//               images: [
+//                 {url: Image1, description: ''},
+//                 {url: Image2, description: ''},
+//                 {url: Image3, description: ''},
+//               ],
+//               photoProjects: alarm,
+//             }
+//           },
           
 
-    ];
+//     ];
 
-    const renderItem = (item) => {
-        return (
-            <div className='image-gallery-image'>
-                <a href={item.originalUrl} 
-                   target='_blank' 
-                   rel='noopener noreferrer'
-                   onClick={(e) => {
-                    e.preventDefault();
-                    setModalContent(item); 
-                    setModalIsOpen(true);
-                }}>
-                    {/* add CSS here to limit the size of images */}
-                    <img src={item.original} alt='' style={{maxWidth: "100%", maxHeight: "100%"}} />
-                </a>
-            </div>
-        );
-    }
+//     const renderItem = (item) => {
+//         return (
+//             <div className='image-gallery-image'>
+//                 <a href={item.originalUrl} 
+//                    target='_blank' 
+//                    rel='noopener noreferrer'
+//                    onClick={(e) => {
+//                     e.preventDefault();
+//                     setModalContent(item); 
+//                     setModalIsOpen(true);
+//                 }}>
+//                     {/* add CSS here to limit the size of images */}
+//                     <img src={item.original} alt='' style={{maxWidth: "100%", maxHeight: "100%"}} />
+//                 </a>
+//             </div>
+//         );
+//     }
 
-    return (
-        <div className="app__content2">
-            <h1 id="Projects">My Projects</h1>
-            <div className="uder-lenta">
-                <ImageGallery items={images} 
-                              showFullscreenButton={true}
-                              showPlayButton={false}
-                              showBullets={true}
-                              renderItem={renderItem}  />
-            </div>
-            <Modal
-              isOpen={modalIsOpen}
-              onRequestClose={() => setModalIsOpen(false)}
-              style={{
-                content: {
-                  width: '80%', 
-                  height: '80%', 
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  marginTop: 'auto', 
-                  marginBottom: 'auto',
+//     return (
+//         <div className="app__content2">
+//             <h1 id="Projects">My Projects</h1>
+//             <div className="uder-lenta">
+//                 <ImageGallery items={images} 
+//                               showFullscreenButton={true}
+//                               showPlayButton={false}
+//                               showBullets={true}
+//                               renderItem={renderItem}  />
+//             </div>
+//             <Modal
+//               isOpen={modalIsOpen}
+//               onRequestClose={() => setModalIsOpen(false)}
+//               style={{
+//                 content: {
+//                   width: '80%', 
+//                   height: '80%', 
+//                   marginLeft: 'auto',
+//                   marginRight: 'auto',
+//                   marginTop: 'auto', 
+//                   marginBottom: 'auto',
                  
-                }
-              }}
-            >
+//                 }
+//               }}
+//             >
 
-<ProjectInfo project={modalContent || {}} />
-              <div className='but-close'>
-    <button  id='close' style={{alignItems: 'center'}} onClick={() => setModalIsOpen(false)}>Close</button>
-    </div>
-</Modal>
-        </div>
-    );
-};
+// <ProjectInfo project={modalContent || {}} />
+//               <div className='but-close'>
+//     <button  id='close' style={{alignItems: 'center'}} onClick={() => setModalIsOpen(false)}>Close</button>
+//     </div>
+// </Modal>
+//         </div>
+//     );
+// };
 
 
 
@@ -422,5 +411,5 @@ const ProjectInfo = ({ project }) => {
 
 
 
-export { Header, AboutMe, Projects, Skills, Contact, CV };
+export { Header, AboutMe,  Skills, Contact, CV, ProjectInfo };
 

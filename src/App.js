@@ -1,6 +1,6 @@
-import {Header, AboutMe, Projects, Skills, Contact, CV } from './components/Nav'
+import {Header, AboutMe, Skills, Contact, CV } from './components/Nav'
 import './App.css';
-
+import SimpleSlider from './components/Carus';
 
 function App() {
   return (
@@ -10,9 +10,10 @@ function App() {
             <AboutMe />
             <Skills />
             <CV />
-            <Projects />
+            <SimpleSlider />
             {/* <Team /> */}
             <Contact />
+            
         </div>
     
     </div>
